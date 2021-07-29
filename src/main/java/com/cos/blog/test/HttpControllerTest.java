@@ -12,20 +12,20 @@ public class HttpControllerTest {
     // 인터넷 브라우저 요청은 무조건 get요청밖에 할 수 없다.
     // http://localhost:8080/http/get (select)
     @GetMapping("/http/get")
-    public String getTest() {
-        return "get 요청";
+    public String getTest(Member m) {
+        return "get 요청 : "+m.getId()+","+m.getUsername()+","+m.getPassword()+","+m.getEmail();
     }
 
     // http://localhost:8080/http/post (insert)
-    @PostMapping("/http/post")
-    public String postTest() {
-        return "post 요청";
+    @PostMapping("/http/post")  // MessageConverter (스프링부트)
+    public String postTest(@RequestBody Member m) {
+        return "post 요청 : " +m.getId()+","+m.getUsername()+","+m.getPassword()+","+m.getEmail();
     }
 
     // http://localhost:8080/http/put (update)
-    @PutMapping("/http/post")
-    public String putTest() {
-        return "put 요청";
+    @PutMapping("/http/put")
+    public String putTest(@RequestBody Member m) {
+        return "put 요청"+m.getId()+","+m.getUsername()+","+m.getPassword()+","+m.getEmail();
     }
 
     // http://localhost:8080/http/delete (delete)
