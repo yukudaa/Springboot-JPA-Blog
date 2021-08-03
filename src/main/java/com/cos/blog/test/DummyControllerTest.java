@@ -12,7 +12,7 @@ public class DummyControllerTest {
 
     @Autowired  // 의존성 주입(DI)
     private UserRepository userRepository;
-    
+
 
     // http://localhost:8000/blog/dummy/join (요청)
     // http의 body에 username, password, eamil 데이터를 가지고 (요청)
