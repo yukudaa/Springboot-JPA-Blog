@@ -42,4 +42,5 @@ public class User {
     @CreationTimestamp // 시간이 자동 입력
     private Timestamp createDate;
 
+    
 }
